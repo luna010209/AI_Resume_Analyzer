@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: resumeAnalyzer
+
+  datasource:
+    url: jdbc:mysql://<address id>:<port>/<db>
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: <username>
+    password: <password>
+
+
+
