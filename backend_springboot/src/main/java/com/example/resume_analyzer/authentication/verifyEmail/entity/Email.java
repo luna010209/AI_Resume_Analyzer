@@ -15,8 +15,6 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
-@Builder
 public class Email {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

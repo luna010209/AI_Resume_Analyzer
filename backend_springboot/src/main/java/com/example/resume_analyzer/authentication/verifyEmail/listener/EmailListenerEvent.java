@@ -1,10 +1,12 @@
 package com.example.resume_analyzer.authentication.verifyEmail.listener;
 
+import com.example.resume_analyzer.exception.CustomException;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
-import lombok.var;
+
 import org.springframework.context.ApplicationListener;
+import org.springframework.http.HttpStatus;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
@@ -34,7 +36,7 @@ public class EmailListenerEvent implements ApplicationListener<EmailListener> {
             messageHelper.setSubject(subject);
             mailSender.send(message);
         } catch (MessagingException | UnsupportedEncodingException e){
-
+            throw new CustomException(HttpStatus.INTERNAL_SERVER_ERROR, "Fail to send email");
         }
     }
 }
