@@ -17,4 +17,8 @@ public class EmailController {
     public String sendCode(@RequestBody EmailRequest request){
         return emailService.sendCode(request);
     }
+    @PostMapping
+    public String verifyCode(@RequestBody EmailRequest request){
+        return emailService.verifyCode(request);
+    }
 }
