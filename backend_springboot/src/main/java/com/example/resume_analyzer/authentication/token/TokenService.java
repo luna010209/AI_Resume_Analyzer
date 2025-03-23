@@ -24,6 +24,7 @@ public class TokenService {
         UserDto user = (UserDto) userService.loadUserByUsername(request.getUsername());
         if (!encoder.matches(request.getPassword(), user.getPassword()))
             throw new CustomException(HttpStatus.CONFLICT, "Wrong password");
-        
+        String token = tokenUtils.generateToken(request.getUsername());
+        return TokenResponse.builder().token(token).build();
     }
 }
