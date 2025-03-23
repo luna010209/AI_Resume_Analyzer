@@ -10,12 +10,15 @@ import com.example.resume_analyzer.authentication.verifyEmail.repo.EmailRepo;
 import com.example.resume_analyzer.exception.CustomException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class UserService {
+public class UserService implements UserDetailsService {
     private final UserRepo userRepo;
     private final EmailRepo emailRepo;
     private final PasswordEncoder encoder;
@@ -39,6 +42,15 @@ public class UserService {
                 .authority("ROLE_USER,ROLE_ADMIN")
                 .build();
         return UserResponse.fromEntity(userRepo.save(user));
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        UserEntity user = userRepo.findByUsername(username).orElseThrow(
+                ()-> new CustomException(HttpStatus.BAD_REQUEST, "No exist username")
+        );
+
+        return UserDto.fromEntity(user);
     }
 
 }
