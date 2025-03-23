@@ -1,5 +1,6 @@
 package com.example.resume_analyzer.authentication.user.service;
 
+import com.example.resume_analyzer.authentication.user.UserComponent;
 import com.example.resume_analyzer.authentication.user.dto.UserDto;
 import com.example.resume_analyzer.authentication.user.dto.UserRequest;
 import com.example.resume_analyzer.authentication.user.dto.UserResponse;
@@ -22,6 +23,7 @@ public class UserService implements UserDetailsService {
     private final UserRepo userRepo;
     private final EmailRepo emailRepo;
     private final PasswordEncoder encoder;
+    private final UserComponent userComponent;
     public UserResponse createUser(UserRequest request){
         if (userRepo.existsByUsername(request.getUsername()))
             throw new CustomException(HttpStatus.BAD_REQUEST, "Username already exists");
@@ -51,6 +53,10 @@ public class UserService implements UserDetailsService {
         );
 
         return UserDto.fromEntity(user);
+    }
+
+    public UserResponse userLogin(){
+        return UserResponse.fromEntity(userComponent.userLogin());
     }
 
 }
