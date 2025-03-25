@@ -12,14 +12,14 @@ import lombok.Setter;
 @Builder
 public class ResumeResponse {
     private Long id;
-    private String fileImport;
+//    private String fileImport;
     private String fileExport;
     private String type;
     private Long userId;
     public static ResumeResponse fromEntity(Resume resume){
         ResumeResponse response = ResumeResponse.builder()
                 .id(resume.getId())
-                .fileImport(resume.getFileImport())
+//                .fileImport(resume.getFileImport())
                 .fileExport(resume.getFileExport())
                 .type(resume.getType().toString())
                 .userId(resume.getUser().getId())

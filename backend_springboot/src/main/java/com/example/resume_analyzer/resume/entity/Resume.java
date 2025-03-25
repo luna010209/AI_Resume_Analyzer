@@ -15,7 +15,6 @@ public class Resume {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fileImport;
     private String fileExport;
 
     @Enumerated(EnumType.STRING)
