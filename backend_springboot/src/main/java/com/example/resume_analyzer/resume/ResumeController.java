@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class ResumeController {
     private final ResumeService resumeService;
     @PostMapping
-    public ResumeResponse extractFile(@RequestParam MultipartFile file){
+    public ResumeResponse extractFile(@RequestParam("file") MultipartFile file){
         return resumeService.extractFile(file);
     }
 }
