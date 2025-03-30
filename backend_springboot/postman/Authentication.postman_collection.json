@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "228ccb93-29e6-452b-98a0-e187d7821807",
+		"name": "Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37757111"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "POST / (create new user)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"luna010209\",\r\n    \"password\": \"Luna@01\",\r\n    \"pwConfirm\": \"Luna@01\",\r\n    \"email\":\"lunadoseoul22@gmail.com\",\r\n    \"name\": \"Luna Do\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /token (login viewer)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"luna010209\",\r\n    \"password\": \"Luna@01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/token",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET isTokenValid?",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"luna010209\",\r\n    \"password\": \"Luna@01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/token/eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsdW5hMDEiLCJpYXQiOjE3NDEyMjM1MjMsImV4cCI6MTc0MTIyNTMyM30.j3NtO0C07Ag1MLr4cnlF3Ey3sASaj8aFHlLXRVjemoP3G1Tt3jQeGE-L_biYVBZz",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"token",
+								"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsdW5hMDEiLCJpYXQiOjE3NDEyMjM1MjMsImV4cCI6MTc0MTIyNTMyM30.j3NtO0C07Ag1MLr4cnlF3Ey3sASaj8aFHlLXRVjemoP3G1Tt3jQeGE-L_biYVBZz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsdW5hMDEwMjA5IiwiaWF0IjoxNzQyOTk3NTgyLCJleHAiOjE3NDMwMDExODJ9.g60fAWYrsvdxTyq7aM615Bc0Ah4kWvHHzZChbHAsop61pu-L6knBbiOMhTRzbaJm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"luna0102\",\r\n    \"password\": \"Luna@01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT / (update name, email, phone)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJMdW5hIERvIiwiaWF0IjoxNzQxNDgzODc4LCJleHAiOjE3NDE0ODU2Nzh9.c_FQNUOimZrM8OvVoy56Ew9UidS8t-HcXKz7SqnM4oI-4m6QAV8bAzjKZT3ELdPr",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Do Luna\",\r\n    \"email\":\"luna@gmail.com\",\r\n    \"username\":\"sara\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /avatar (update image)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsdW5hMDEiLCJpYXQiOjE3NDE0ODMxOTIsImV4cCI6MTc0MTQ4NDk5Mn0.mngZ9s4f-rKl2npnnOHUafgaiGV63Ks6_BmXn5SdE5PwIEMPJRMjQeQS9jhZFHPk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef629af-f574-4610-bd56-9b277feb2dfe"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user/change-avatar",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"change-avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsdW5hMDEiLCJpYXQiOjE3NDE0MTAyMDcsImV4cCI6MTc0MTQxMjAwN30.bdBvB6PXTH3PzdoVlIhZx-pzM2NecC4mpGSJGcpTrN01YycSWlkDLfcaYm1PCTsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1234\",\r\n    \"newPw\":\"Luna@01\",\r\n    \"pwConfirm\":\"Luna@01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user/change-pw",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"change-pw"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Verify email",
+			"item": [
+				{
+					"name": "/verify-email/sending",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lunadoseoul22@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/email/sending",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"email",
+								"sending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/verify-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lunadoseoul22@gmail.com\",\r\n    \"code\": 479273\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/email",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/verify-email/resend",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lunadoseoul22@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/verify-email/resend",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"verify-email",
+								"resend"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
