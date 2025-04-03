@@ -27,10 +27,15 @@ def extract_basic_info(text):
 def extract_skills(text):
   skills = []
   with open("skills.txt", "r", encoding="utf-8") as f:
-    text = f.readlines()
-    for line in text:
+    t = f.readlines()
+    for line in t:
       a, b = line.split(":")
       skills.extend([i.strip() for i in b.strip().split(",")])
-  found_skills = [skill for skill in skills if skill.lower() in text.lower()]
+  found_skills = [skill for skill in set(skills) if skill.lower() in text.lower()]
     
   return {"Skills": found_skills}
+
+def analyze_resume(text):
+  # basic_info = extract_basic_info(text)
+  skills = extract_skills(text)
+  return {**skills}
