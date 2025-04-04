@@ -21,19 +21,4 @@ Cybersecurity: Penetration testing, vulnerability assessment, security protocols
 Security Tools: SIEM, IDS/IPS 
 Project Management: Agile, Scrum, Waterfall, Kanban
 Technical Writing: Documentation, manuals
-Design: UI/UX design, graphic design
-Content Creation: Copywriting, SEO
-Customer Support: Troubleshooting, problem-solving
-Hardware: PC hardware, server hardware, networking equipment
-Industry-Specific Software: CAD, CAM, ERP, CRM
-Basic Computer Skills: Word processing, spreadsheets, presentations
-Social Media Skills: Content creation, social media management
-Financial Literacy: Accounting, bookkeeping
-Typing Skills: Accurate and fast typing
-Cloud Collaboration: Shared calendars, document sharing
-Remote Communication: Zoom, email, video conferencing
-Basic Math: Essential for many technical fields
-Internet Safety: Understanding online security threats
-Operating Equipment: Machinery operation, industrial equipment
-Blueprint Drafting: Creating technical drawings
-Problem Solving: Analytical and critical thinking skills 
+Design: Figma, Flutter, Streamlit
