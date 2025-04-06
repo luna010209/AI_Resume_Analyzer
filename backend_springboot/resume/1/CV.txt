@@ -1,9 +1,7 @@
 
 Profile
 
-Activities/Experience+10-5965-1209
-
-liendhhha140217@gmail.com
+Activities/Experience
 
 luna010209
 
@@ -71,9 +69,6 @@ stack web development and working in South Korea.
 
 2024 Kiip5 (Korea Immigration & Integration Program)
 
-211-45 Noryangjin-dong, Dongjak
-District, Seoul
-
 Notion_luna
 
 Bachelor: Japanese Studies
@@ -120,8 +115,6 @@ https://local-entree-c8a.notion.site/1565418244bf80cb99f2d9a9a0b5df09?pvs=4
 
 
 Luna?|?Do?Hoang?Huong?Lien
-
-010-5965-1209?|?liendhhha140217@gmail.com
 
 Project Technical?skills Detail
 
